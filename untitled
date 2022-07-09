@@ -1,0 +1,36 @@
+import smtlib
+from email import encoders
+from email.mine.text import MIMEText
+from email.mine.base import MiMEBase
+from email.mine.multipart import MIMEMultipart
+
+
+with open {password.txt! "r" as file :
+   password = file.read()
+   
+   with open {"email.list.txt" "r") as file :
+     email= file.read()
+     
+ with open {"text.txt "r")as file:
+    text=file.read
+    
+image file = "index.png"
+image = open (image file" "r")
+pmMIMEBase("application" actet-stream")
+p.set funny(image.read()}
+encoders.encoad base64()
+p.add header("Contemt-Disposition" attachment" filename = (power-file")
+
+server = smtplib.smtp ("smtp.gmail.com, 25)
+sever.starttls{)
+server.ehlo{)
+server-login("sumithsujith321@gmail.com',password)
+
+msg=MIMEMultipart()
+msg{'From'} = 'power of world
+msg{ tp'} = email 
+msg{'subject'} = Emergency'
+msg.attach(p)
+msg.attach{MINEText(text,'plain')}
+
+server.sendmail( sumithsujith321@gmail.com',email.split{'. },msg.as.string{))
